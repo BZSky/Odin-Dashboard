@@ -10,7 +10,8 @@ body {
 .container {
   text-align: center;
   display: grid;
-  grid-template-columns: 2fr 5fr 2fr;
+  grid-template-columns: 320px 5fr 2fr;
+  grid-template-rows: 100px 150px 1fr 20px;
   grid-template-areas: "sidebar header header" "sidebar header header" "sidebar main main" "sidebar footer footer";
   height: 100vh;
   width: 100vw;
@@ -66,7 +67,6 @@ img {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  flex: 0 0 auto;
 }
 
 .img-interactable:hover {
@@ -78,7 +78,6 @@ img {
 
 .user-info {
   grid-area: user-info;
-  align-items: center;
   display: grid;
   grid-template-columns: 1fr 3fr;
   grid-template-rows: 1fr 1fr;
@@ -97,21 +96,13 @@ img {
 
 .user-greeting {
   font-size: 0.8rem;
+  align-self: end;
   padding-top: 1rem;
 }
 
 .user-name {
   padding-bottom: 1rem;
   font-size: 1.5rem;
-}
-
-.sidebar > ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
-  margin-left: 1rem;
-  max-height: 300px;
 }
 
 .sidebar ul,
@@ -131,45 +122,53 @@ li > a {
 .nav2 li {
   display: flex;
   align-items: center;
+  gap: 1rem;
 }
 
 .sidebar {
   background-color: #7f1d1d;
   display: grid;
-  grid-template-rows: 1fr 3fr 1fr 2fr;
+  grid-template-rows: 100px 2fr 1fr 1fr 1fr;
   grid-template-areas: "logo" "nav" "nav2";
-  gap: 20px;
+  gap: 40px;
   place-items: stretch;
   grid-area: sidebar;
   overflow: hidden;
 }
 
-.sidebar .logo {
-  color: white;
+.logo {
   font-size: 2rem;
   font-weight: normal;
-}
-
-.logo {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 1rem;
   grid-area: logo;
-  padding-bottom: 2rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 0 0 2rem;
+}
+
+.logo p {
+  color: white;
 }
 
 .nav {
   grid-area: nav;
+  grid-template-rows: repeat(6, 50px);
 }
 
 .nav2 {
   grid-area: nav2;
+  grid-template-rows: repeat(3, 50px);
 }
 
 .sidebar ul {
   color: black;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: normal;
+  display: grid;
+  gap: 1rem;
+  margin-left: 3rem;
 }
 
 .controls {
@@ -303,6 +302,7 @@ div.trending {
   grid-template-areas: "title" "card-text";
   position: relative;
   padding: 20px;
+  font-size: 0.8rem;
 }
 
 .announcements .card::after {
@@ -325,6 +325,10 @@ div.trending {
   grid-template-areas: "image title" "image title" "image title" "image title";
   gap: 1rem;
   padding: 1rem;
+}
+
+.trending .card .title p:first-child {
+  color: black;
 }
 
 .article-container .title {
