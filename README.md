@@ -4,5 +4,5 @@ A grid & flex layout for a Dashboard app created as a final assignment of the Od
 
 TODOs:
 
-Responsive: portrait & overall fixes
-Add favicon
+- Responsive: portrait & overall fixes
+- Add favicon
